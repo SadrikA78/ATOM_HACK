@@ -1,0 +1,205 @@
+	function reverseGeocode(platform) {
+  var geocoder = platform.getGeocodingService(),
+    reverseGeocodingParameters = {
+      prox: '52.5309,13.3847,150', // Berlin
+      mode: 'retrieveAddresses',
+      maxresults: '1',
+      jsonattributes : 1
+    };
+
+  geocoder.reverseGeocode(
+    reverseGeocodingParameters,
+    onSuccess,
+    onError
+  );
+}
+
+/**
+ * This function will be called once the Geocoder REST API provides a response
+ * @param  {Object} result          A JSONP object representing the  location(s) found.
+ *
+ * see: http://developer.here.com/rest-apis/documentation/geocoder/topics/resource-type-response-geocode.html
+ */
+function onSuccess(result) {
+  var locations = result.response.view[0].result;
+ /*
+  * The styling of the geocoding response on the map is entirely under the developer's control.
+  * A representitive styling can be found the full JS + HTML code of this example
+  * in the functions below:
+  */
+  addLocationsToMap(locations);
+  addLocationsToPanel(locations);
+  // ... etc.
+}
+
+/**
+ * This function will be called if a communication error occurs during the JSON-P request
+ * @param  {Object} error  The error message received.
+ */
+function onError(error) {
+  alert('Can\'t reach the remote server');
+}
+
+      // Initialize the platform object:
+      var platform = new H.service.Platform({
+        'apikey': 'NQV6BQyBTCgxXB8y7sONVBoZI3AJmfIC3s1WMctElfY'
+      });
+      // Obtain the default map types from the platform object
+      var maptypes = platform.createDefaultLayers();
+		    var defaultLayers = platform.createDefaultLayers();
+
+      // Instantiate (and display) a map object:
+      var map = new H.Map(
+        document.getElementById('mapContainer'),
+        maptypes.vector.normal.map,
+        {
+          zoom: 4,
+          center: { lng: 20, lat: 37.376 },
+		pixelRatio: window.devicePixelRatio || 1
+        });
+		window.addEventListener('resize', () => map.getViewPort().resize());
+	var marker5 = new H.map.Marker({ lat: {{lat}}, lng:{{ln}} });
+	map.addObject(marker5);
+	var marker = new H.map.Marker({ lat: 50, lng: 5 });
+	var marker1 = new H.map.Marker({ lat: 30, lng: 60 });
+var svgMarkup = '<svg width="24" height="24" ' +
+    'xmlns="http://www.w3.org/2000/svg">' +
+    '<rect stroke="white" fill="#1b468d" x="1" y="1" width="22" ' +
+    'height="22" /><text x="12" y="18" font-size="12pt" ' +
+    'font-family="Arial" font-weight="bold" text-anchor="middle" ' +
+    'fill="white">Я</text></svg>';
+
+// Create an icon, an object holding the latitude and longitude, and a marker:
+var icon = new H.map.Icon(svgMarkup),
+    coords = {lat: 52.53075, lng: 13.3851},
+    marker3 = new H.map.Marker(coords, {icon: icon});	
+	var animatedSvg =
+    '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" ' + 
+    'y="0px" style="margin:-112px 0 0 -32px" width="136px"' + 
+    'height="150px" viewBox="0 0 136 150"><ellipse fill="#000" ' +
+    'cx="32" cy="128" rx="36" ry="4"><animate attributeName="cx" ' + 
+    'from="32" to="32" begin="0s" dur="1.5s" values="96;32;96" ' + 
+    'keySplines=".6 .1 .8 .1; .1 .8 .1 1" keyTimes="0;0.4;1"' + 
+    'calcMode="spline" repeatCount="indefinite"/>' +    
+    '<animate attributeName="rx" from="36" to="36" begin="0s"' +
+    'dur="1.5s" values="36;10;36" keySplines=".6 .0 .8 .0; .0 .8 .0 1"' + 
+    'keyTimes="0;0.4;1" calcMode="spline" repeatCount="indefinite"/>' +
+    '<animate attributeName="opacity" from=".2" to=".2"  begin="0s" ' +
+    ' dur="1.5s" values=".1;.7;.1" keySplines=" .6.0 .8 .0; .0 .8 .0 1" ' +
+    'keyTimes=" 0;0.4;1" calcMode="spline" ' +
+    'repeatCount="indefinite"/></ellipse><ellipse fill="#1b468d" ' +
+    'cx="26" cy="20" rx="16" ry="12"><animate attributeName="cy" ' +
+    'from="20" to="20" begin="0s" dur="1.5s" values="20;112;20" ' +
+    'keySplines=".6 .1 .8 .1; .1 .8 .1 1" keyTimes=" 0;0.4;1" ' +
+    'calcMode="spline" repeatCount="indefinite"/> ' +
+    '<animate attributeName="ry" from="16" to="16" begin="0s" ' + 
+    'dur="1.5s" values="16;12;16" keySplines=".6 .0 .8 .0; .0 .8 .0 1" ' +
+    'keyTimes="0;0.4;1" calcMode="spline" ' +
+    'repeatCount="indefinite"/></ellipse></svg>';
+
+// Create an icon object, an object with geographic coordinates and a marker:
+var icon = new H.map.DomIcon(animatedSvg),
+    coords = {lat: 35, lng: 60},
+    marker4 = new H.map.DomMarker(coords, {icon: icon});
+	
+	
+	
+var circle = new H.map.Circle({lat: 52.51, lng: 13.4}, 800000);
+
+
+
+var points = [
+  { lat: 52.5309825, lng: 13.3845921 },
+  { lat: 52.5311923, lng: 13.3853495 },
+  { lat: 52.5313532, lng: 13.3861756 },
+  { lat: 52.5315142, lng: 13.3872163 },
+  { lat: 52.5316215, lng: 13.3885574 },
+  { lat: 52.5320399, lng: 13.3925807 },
+  { lat: 52.5321472, lng: 13.3935785 },
+  { lat: 52.5323832, lng: 13.395499  },
+  { lat: 52.5324261, lng: 13.3959818 },
+  { lat: 52.5325012, lng: 13.397795  },
+  { lat: 52.5325656, lng: 13.3986318 },
+  { lat: 52.5326192, lng: 13.3989215 },
+  { lat: 52.5325119, lng: 13.3989751 },
+  { lat: 52.5323081, lng: 13.3991039 },
+  { lat: 52.5318789, lng: 13.3994472 },
+  { lat: 52.5301194, lng: 13.4009278 },
+  { lat: 52.5297546, lng: 13.4012604 },
+  { lat: 52.5296152, lng: 13.4014106 },
+  { lat: 52.5289822, lng: 13.4018934 },
+  { lat: 52.5276947, lng: 13.4029663 },
+  { lat: 52.5271797, lng: 13.4033203 },
+  { lat: 52.5269973, lng: 13.4033954 },
+  { lat: 52.5265145, lng: 13.4035349 },
+  { lat: 52.5260746, lng: 13.4036851 },
+  { lat: 52.5260103, lng: 13.4038353 },
+  { lat: 52.5256562, lng: 13.40464   },
+  { lat: 52.5253022, lng: 13.4053588 },
+  { lat: 52.5250447, lng: 13.4059381 },
+  { lat: 52.5249588, lng: 13.4062278 },
+  { lat: 52.5249267, lng: 13.4064317 },
+  { lat: 52.5249052, lng: 13.406775  },
+  { lat: 52.5248623, lng: 13.4069574 },
+  { lat: 52.5241864, lng: 13.4089208 },
+  { lat: 52.5241327, lng: 13.4091246 },
+  { lat: 52.5240898, lng: 13.409307  },
+  { lat: 52.5240040, lng: 13.4096611 },
+  { lat: 52.5239503, lng: 13.4101653 },
+  { lat: 52.5239289, lng: 13.4110343 },
+  { lat: 52.5238967, lng: 13.4117103 },
+  { lat: 52.5238752, lng: 13.4120321 },
+  { lat: 52.5236285, lng: 13.4126866 },
+  { lat: 52.5231242, lng: 13.4139311 },
+  { lat: 52.5227809, lng: 13.4146714 },
+  { lat: 52.5224799, lng: 13.4152412 }
+];
+
+
+var linestring = new H.geo.LineString();
+points.forEach(function(point) {
+  linestring.pushPoint(point);
+});
+
+
+
+
+
+
+// Initialize a polyline with the linestring:
+var polyline = new H.map.Polyline(linestring, { style: { lineWidth: 10 }});
+	// Add the marker to the map:
+	map.addObject(marker);
+	map.addObject(marker1);
+	map.addObject(marker3);
+	map.addObject(marker4);
+
+	map.addObject(circle);
+	map.addObject(polyline);
+	
+	var locationsContainer = document.getElementById('panel');
+
+//Step 3: make the map interactive
+// MapEvents enables the event system
+// Behavior implements default interactions for pan/zoom (also on mobile touch environments)
+
+
+
+
+
+var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+
+var ui = H.ui.UI.createDefault(map, defaultLayers, 'ru-RU');
+
+var mapSettings = ui.getControl('mapsettings');
+var zoom = ui.getControl('zoom');
+var scalebar = ui.getControl('scalebar');
+
+var bubble = new H.ui.InfoBubble({ lng: 30, lat: 60 }, {
+                content: '<b>{{text}}</b>'
+             });
+
+ui.addBubble(bubble);
+
+

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block sidebar %}
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">Главное меню</li>
+        <li class="active treeview menu-open">
+          <a href="#">
+            <i class="fa fa-car"></i> <span>Дорожная обстановка</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/gpx_analyse"><i class="fa fa-ravelry"></i> Предварительный анализ</a></li>
+			<li class="active"><a href="/index"><i class="fa fa-road"></i> Состояние дорог</a></li>
+			<li><a href="/map_devices"><i class="fa fa-map-o"></i> Маршруты лабораторий</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-user-circle-o"></i>
+            <span>Безопасность</span>
+			<span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-yellow">12</small>
+              <small class="label pull-right bg-green">16</small>
+              <small class="label pull-right bg-red">5</small>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/secure"><i class="fa fa-line-chart"></i> Общий анализ</a></li>
+                        <span class="pull-right-container">
+              <span class="label label-primary pull-right">2</span>
+            </span>
+			<li><a href="pages/layout/boxed.html"><i class="fa fa-map-marker"></i> Карта ДТП</a></li>
+            
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-trash"></i> <span>Загрязнение</span>
+            <span class="pull-right-container">
+			<i class="fa fa-angle-left pull-right"></i>
+              <small class="label pull-right bg-green">new</small>
+            </span>
+          </a>
+		            <ul class="treeview-menu">
+            <li><a href="/litter"><i class="fa fa-pie-chart"></i> Общий анализ</a></li>
+                        <span class="pull-right-container">
+              <span class="label label-primary pull-right">2</span>
+            </span>
+			<li><a href="pages/layout/boxed.html"><i class="fa fa-map-marker"></i> Карта загрязнения</a></li>
+            
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Говорит население</span>
+            <span class="pull-right-container">
+			<i class="fa fa-angle-left pull-right"></i>
+              <small class="label pull-right bg-green">new</small>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/social"><i class="fa fa-pie-chart"></i> Анализ тональности</a></li>
+            <li><a href="pages/charts/morris.html"><i class="fa fa-map-marker"></i> Карта сообщений</a></li>
+            <li><a href="pages/charts/flot.html"><i class="fa fa-bars "></i> Список сообщений</a></li>
+            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Геофенсинг</a></li>
+          </ul>
+        </li>
+
+		<li><a href="/contact"><i class="fa fa-address-book-o"></i> <span>Справка</span></a></li>
+        <li class="header">ЛЕЙБЛЫ</li>
+        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Опасность</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Важное</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Информация</span></a></li>
+      </ul>
+{% endblock %}
