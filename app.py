@@ -69,10 +69,10 @@ def contact():
 
 @app.route('/social')
 def social():
-    CONSUMER_KEY = 'u4SD5KlVGm59ftBTb69glEtp1'
-    CONSUMER_SECRET = 'PCSFhTShUoKzASdExZh5pz54nP1v4uo0KheBotPpZUUoQ3r1sV'
-    OAUTH_TOKEN = '2308267840-G9kog927ZlVhGvoUsXbIt16ZQLk0eUkeuteieA6'
-    OAUTH_TOKEN_SECRET = '6ZW7GNAZTG6tW4YXYShawMgGbv5ri4kfZvgDF1UAbSb4a'
+    CONSUMER_KEY = ''
+    CONSUMER_SECRET = ''
+    OAUTH_TOKEN = ''
+    OAUTH_TOKEN_SECRET = ''
     auth = twitter.oauth.OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET,
                                CONSUMER_KEY, CONSUMER_SECRET)
     twitter_api = twitter.Twitter(auth=auth)
