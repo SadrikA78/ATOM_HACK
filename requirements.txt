@@ -47,6 +47,6 @@ sklearn==0.0
 smart-open==1.10.0
 stop-words==2018.7.23
 twitter==1.18.0
-urllib3==1.25.8
+urllib3==1.26.5
 Werkzeug==1.0.0
 wordcloud==1.6.0
